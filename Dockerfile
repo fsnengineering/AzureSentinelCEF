@@ -1,14 +1,15 @@
-FROM python:3.5.8-slim-buster
+FROM python:3.5.8-buster
 
 ENV WORKSPACE_ID=0
 ENV PRIMARY_KEY=0
 
 RUN apt-get update && apt-get install -y \
+  apt-utils \
+  && apt-get install -y \
   wget \
   sudo \
   nano \
-  apt-utils \
-  && pip install python-ctypes \
+  python-ctypes \
   && wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py \
   && python cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}
 
