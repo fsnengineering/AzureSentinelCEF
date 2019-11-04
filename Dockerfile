@@ -5,11 +5,12 @@ ENV PRIMARY_KEY=0
 
 RUN apt-get update && apt-get install -y \
   apt-utils \
-  && apt-get install -y \
+  
+RUN   apt-get install -y \
   wget \
   sudo \
   nano \
-  python-ctypes \
+  python-ctypeslib \
   && wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py \
   && python cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}
 
