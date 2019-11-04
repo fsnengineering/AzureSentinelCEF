@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
   sudo \
   nano \
   apt-utils \
-  && pip install python-ctypes
+  && pip install python-ctypes \
   && wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py \
   && python cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}
 
