@@ -4,9 +4,9 @@ ENV WORKSPACE_ID=0
 ENV PRIMARY_KEY=0
 
 RUN apt-get update && apt-get install -y \
-  apt-utils \
+  apt-utils
   
-RUN   apt-get install -y \
+RUN apt-get install -y \
   wget \
   sudo \
   nano \
