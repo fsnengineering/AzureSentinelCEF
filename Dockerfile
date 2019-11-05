@@ -16,9 +16,13 @@ RUN apt-get update && apt-get install -y \
   procps \
   cron \
   && wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py
-#&& python cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}
+#&& sudo python cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}
 
 VOLUME [ "/etc/rsyslog.d/" ]
 VOLUME [ "/etc/syslog-ng/" ]
+
+VOLUME [ "/usr/src/app/" ]
+VOLUME [ "/etc/opt/omi/" ]
+VOLUME [ "/etc/opt/microsoft/" ]
 
 EXPOSE 25226 514
