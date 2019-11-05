@@ -26,3 +26,6 @@ VOLUME [ "/etc/opt/omi/" ]
 VOLUME [ "/etc/opt/microsoft/" ]
 
 EXPOSE 25226 514
+
+CMD startup.sh .
+ENTRYPOINT ["startup.sh"]
