@@ -2,7 +2,7 @@ CONTAINER_ALREADY_STARTED="CONTAINER_ALREADY_STARTED_PLACEHOLDER"
 if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
     touch $CONTAINER_ALREADY_STARTED
     echo "-- First container startup --"
-    sudo ln -s /usr/bin/python3 /usr/bin/python
+#sudo ln -s /usr/bin/python3 /usr/bin/python
     mkdir /etc/opt/microsoft
     mkdir /etc/opt/microsoft/omsagent
     mkdir /etc/opt/microsoft/omsagent/$1
