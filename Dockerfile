@@ -1,4 +1,4 @@
-FROM python:3.8.0-buster
+FROM python:3.8.0-slim-buster
 
 ENV WORKSPACE_ID=0
 ENV PRIMARY_KEY=0
