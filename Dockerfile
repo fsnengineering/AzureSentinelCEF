@@ -25,7 +25,7 @@ VOLUME [ "/etc/opt/microsoft/" ]
 
 EXPOSE 25226 514
 
-CMD startup.sh .
+COPY startup.sh .
 ENTRYPOINT ["/bin/bash", "-c", "sudo sh /usr/src/app/startup.sh"]
 #ENTRYPOINT ["startup.sh"]
 #ENTRYPOINT ["/bin/bash", "-c", "sudo python /usr/src/app/cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}"]
