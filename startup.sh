@@ -13,4 +13,4 @@ if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
 else
     echo "-- Not first container startup --"
 fi
-CMD tail -f /dev/null
+tail -f /dev/null
