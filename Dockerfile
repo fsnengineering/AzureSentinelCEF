@@ -1,4 +1,5 @@
-FROM python:3.8.0-buster
+FROM ubuntu:16.04
+#FROM python:3.8.0-buster
 
 ENV WORKSPACE_ID=0
 ENV PRIMARY_KEY=0
@@ -8,13 +9,16 @@ WORKDIR /usr/src/app
 #COPY requirements.txt ./
 #RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt -y upgrade \
+  && apt-get install -y \
   apt-utils \
   wget \
   sudo \
   nano \
   procps \
-  cron
+  cron \
+  && apt install -y python3-pip \
+  build-essential libssl-dev libffi-dev python3-dev
 
 VOLUME [ "/etc/rsyslog.d/" ]
 VOLUME [ "/etc/syslog-ng/" ]
