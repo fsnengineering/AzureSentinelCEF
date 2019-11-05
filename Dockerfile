@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
   sudo \
   nano \
   procps \
+  cron \
   && wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py
 #&& python cef_installer.py ${WORKSPACE_ID} ${PRIMARY_KEY}
 
