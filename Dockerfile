@@ -12,9 +12,10 @@ RUN apt-get update && apt -y upgrade \
   sudo \
   nano \
   procps \
-  cron \
-  && apt install -y python3-pip \
-  build-essential libssl-dev libffi-dev python3-dev
+  cron
+#\
+#  && apt install -y python3-pip \
+#  build-essential libssl-dev libffi-dev python3-dev
 
 VOLUME [ "/etc/rsyslog.d/" ]
 VOLUME [ "/etc/syslog-ng/" ]
