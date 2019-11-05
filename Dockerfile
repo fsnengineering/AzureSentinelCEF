@@ -5,7 +5,8 @@ ENV PRIMARY_KEY=0
 
 WORKDIR /usr/src/app
 
-RUN apt-get update && apt -y upgrade \
+RUN apt-get update \
+#&& apt -y upgrade \
   && apt-get install -y \
   apt-utils \
   wget \
