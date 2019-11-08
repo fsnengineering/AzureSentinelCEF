@@ -14,8 +14,7 @@ RUN apt-get update \
   nano \
   procps \
   cron \
-  rsyslog \
-  syslog-ng
+  rsyslog
 #\
 #  && apt install -y python3-pip \
 #  build-essential libssl-dev libffi-dev python3-dev
