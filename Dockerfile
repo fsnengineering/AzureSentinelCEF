@@ -5,16 +5,16 @@ ENV PRIMARY_KEY=0
 
 WORKDIR /usr/src/app
 
-#RUN dnf -y update
+RUN dnf -y update
 
-#RUN dnf -y install gcc openssl-devel bzip2-devel libffi-devel \
-#&&sudo dnf -y install python37 \
-#&&sudo dnf -y install pip3 \
+RUN dnf -y install gcc openssl-devel bzip2-devel libffi-devel \
+&&sudo dnf -y install pip \
+&&sudo dnf -y install firewalld nano procps rsyslog  \
 
 
-#RUN sudo firewall-cmd --zone=FedoraServer --add-port=25226/tcp --permanent \
-#  &&sudo firewall-cmd --zone=FedoraServer --add-service=syslog --permanent \
-#  &&sudo semanage port -a -t syslogd_port_t -p tcp 25226
+RUN sudo firewall-cmd --zone=FedoraServer --add-port=25226/tcp --permanent \
+ &&sudo firewall-cmd --zone=FedoraServer --add-service=syslog --permanent \
+ &&sudo semanage port -a -t syslogd_port_t -p tcp 25226
 
 VOLUME [ "/etc/rsyslog.d/" ]
 VOLUME [ "/etc/syslog-ng/" ]
@@ -25,5 +25,5 @@ VOLUME [ "/etc/opt/microsoft/" ]
 
 EXPOSE 25226 514
 
-#COPY startup.sh .
-#ENTRYPOINT ["/bin/bash", "-c", "sudo sh /usr/src/app/startup.sh ${WORKSPACE_ID} ${PRIMARY_KEY}"]
+COPY startup.sh .
+ENTRYPOINT ["/bin/bash", "-c", "sudo sh /usr/src/app/startup.sh ${WORKSPACE_ID} ${PRIMARY_KEY}"]
