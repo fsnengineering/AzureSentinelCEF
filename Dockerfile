@@ -7,6 +7,10 @@ WORKDIR /usr/src/app
 
 RUN dnf -y update \
 
+RUN sudo firewall-cmd --zone=FedoraServer --add-port=25226/tcp --permanent \
+  sudo firewall-cmd --zone=FedoraServer --add-service=syslog --permanent \
+  sudo semanage port -a -t syslogd_port_t -p tcp 25226
+
 VOLUME [ "/etc/rsyslog.d/" ]
 VOLUME [ "/etc/syslog-ng/" ]
 
