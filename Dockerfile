@@ -5,7 +5,7 @@ ENV PRIMARY_KEY=0
 
 WORKDIR /usr/src/app
 
-RUN dnf -y update \
+#RUN dnf -y update
 
 RUN sudo firewall-cmd --zone=FedoraServer --add-port=25226/tcp --permanent \
   sudo firewall-cmd --zone=FedoraServer --add-service=syslog --permanent \
